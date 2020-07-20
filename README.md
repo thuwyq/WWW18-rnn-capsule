@@ -12,4 +12,4 @@ capsule: Capsule Structure.
 attentionlayer.py: Attention in capsule. It is gotten from https://github.com/huggingface/torchMoji/blob/master/torchmoji/attlayer.py.
 datamanager.py: Manage data.
 data-rt-acl: The movie review dataset.
-```bash
+```
