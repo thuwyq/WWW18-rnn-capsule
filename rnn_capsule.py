@@ -1,4 +1,9 @@
-# -*- coding: utf-8 -*-
+# coding: utf-8
+#
+# Copyright 2018 Yequan Wang
+# Author: Yequan Wang (tshwangyequan@gmail.com)
+#
+# model description
 
 from __future__ import unicode_literals, print_function, division
 import os

@@ -1,5 +1,11 @@
-# -*- coding: utf-8 -*-
+# coding: utf-8
+#
+# Copyright 2018 Yequan Wang
+# Author: Yequan Wang (tshwangyequan@gmail.com)
+#
+
 import numpy as np
+
 
 class DataManager(object):
     def __init__(self, FLAGS):

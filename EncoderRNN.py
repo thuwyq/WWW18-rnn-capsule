@@ -1,4 +1,8 @@
-# -*- coding: utf-8 -*-
+# coding: utf-8
+#
+# Copyright 2018 Yequan Wang
+# Author: Yequan Wang (tshwangyequan@gmail.com)
+#
 
 from __future__ import unicode_literals, print_function, division
 
@@ -8,9 +12,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.autograd import Variable
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
+
 from capsule import Capsule
 
-from attentionlayer import Attention
 
 class EncoderRNN(nn.Module):
     def __init__(self,

@@ -1,4 +1,9 @@
-# -*- coding: utf-8 -*-
+# coding: utf-8
+#
+# Copyright 2018 Yequan Wang
+# Author: Yequan Wang (tshwangyequan@gmail.com)
+#
+
 from __future__ import absolute_import, division, print_function
 
 import time, random, argparse
@@ -42,11 +47,13 @@ use_cuda = torch.cuda.is_available()
 if use_cuda:
     torch.cuda.manual_seed_all(FLAGS.seed)
 
+
 def train(model, datamanager, data_train):
     selected_data = [random.choice(data_train) for i in range(FLAGS.batch_size)]
     batched_data = datamanager.gen_batched_data(selected_data, flag_label_respresentation=0)
     loss, _ = model.stepTrain(batched_data)
     return loss
+
 
 def evaluate(model, datamanager, data_, name=None):
     loss = np.zeros((3, ))
@@ -65,8 +72,9 @@ def evaluate(model, datamanager, data_, name=None):
     pred_vector = np.argmax(np.array(pred_matrix), axis=1)
     c_m = confusion_matrix(np.array(y_true), pred_vector, labels=range(FLAGS.n_label))
     loss /= times
-    accuracy = np.sum([c_m[i][i] for i in xrange(FLAGS.n_label)]) / np.sum(c_m)
+    accuracy = np.sum([c_m[i][i] for i in range(FLAGS.n_label)]) / np.sum(c_m)
     return loss, accuracy, c_m
+
 
 if __name__ == "__main__":
     dataset_name = ['train', 'dev', 'test']
